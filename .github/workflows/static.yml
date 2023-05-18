@@ -40,7 +40,7 @@ jobs:
           path: '.'
       - name: Update base path
         run: |
-          sed -i 's|<base "/>|<base "/oukchaktrang/>|' *.*
+          sed -i 's|"/|"/oukchaktrang|' *.*
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
