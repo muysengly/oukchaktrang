@@ -40,7 +40,9 @@ jobs:
           path: '.'
       - name: Update base path
         run: |
-          sed -i 's|"/|"/oukchaktrang|' *.*
+          find . -type f -exec sed -i 's|="/|="/oukchaktrang|g' {} +
+
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
