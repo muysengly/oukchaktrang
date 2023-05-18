@@ -37,11 +37,7 @@ jobs:
         uses: actions/upload-pages-artifact@v1
         with:
           # Upload entire repository
-          path: '.'
-      - name: Update base path
-        run: |
-          find . -type f -exec sed -i 's|="/|="/oukchaktrang|g' {} +
-
+          path: './oukchaktrang'
 
       - name: Deploy to GitHub Pages
         id: deployment
