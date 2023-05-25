@@ -1,4 +1,4 @@
-name: FastAPI Workflow
+name: Flask Workflow
 
 on:
   push:
@@ -26,5 +26,10 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Start FastAPI app
-        run: uvicorn main:app --host 0.0.0.0 --port 8000
+      - name: Run tests
+        run: pytest
+
+      - name: Start Flask app
+        run: |
+          export FLASK_APP=main.py
+          flask run --host 0.0.0.0 --port 8000
